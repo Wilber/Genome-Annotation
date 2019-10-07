@@ -6,7 +6,7 @@
 # Genome	Annnotation
 
 ## Genome	Annotation	Pipeline:	A summary	of	steps
-
+# DONE!!!
 Summary	of	steps	involved	in	genome	annotation	using	MAKER
 pipeline:
 
