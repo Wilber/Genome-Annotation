@@ -12,11 +12,19 @@ You will be annotating one Scaffold from the Almond genome assembly.
 The following is a summary	of	steps	involved	in	genome	annotation	using	MAKER pipeline. Note that prior identification of repeat elements is essential for genome sequence masking, before predicting genes. This step has already been run, and we will therefore not cover in class. However, interested parties can use [this](https://github.com/Wilber/Genome-Annotation/blob/master/repeat_identification.sh) script for repeat identification (uses RepeatMasker). 
 ##### 1.0 Initial	MAKER analysis (round 1  training):	
 Gene model prediction	based	on	evidence (expression	data,	protein sequence data,	repeat	annotation). Resulting GFF used to train [SNAP](https://github.com/KorfLab/SNAP) gene finder.
-[1.0_annotation_training.sh](https://github.com/Wilber/Genome-Annotation/blob/master/1.0_annotation_training.sh)
+Code: [1.0_annotation_training.sh](https://github.com/Wilber/Genome-Annotation/blob/master/1.0_annotation_training.sh)
 ##### 1.1. Train SNAP (round 1)
 Initial training of SNAP gene finder. This	generates an HMM file/classifier for the first round of gene prediction using SNAP and AUGUSTUS gene finders, next section.
-[1.1_train_SNAP_round1.sh](https://github.com/Wilber/Genome-Annotation/blob/master/1.1_train_SNAP_round1.sh)
-##### 2.0 
+Code: [1.1_train_SNAP_round1.sh](https://github.com/Wilber/Genome-Annotation/blob/master/1.1_train_SNAP_round1.sh)
+##### 2.0. Round 1 of maker prediction 
+First iteration of gene predictions employing a bootstrap approach. Predict gene models using SNAP and AUGUSTUS gene finders, using the HMM classifier generated in section 1.1 above. The reulting GFFs will be used for re-training the HMM classifier. 
+Code: [2.0_annotation_prediction_1.sh](https://github.com/Wilber/Genome-Annotation/blob/master/2.0_annotation_prediction_1.sh)
+##### 2.1. Train SNAP (round 2)
+Round 2 of SNAP training. 
+Code: [2.1_trains_SNAP_round2.sh](https://github.com/Wilber/Genome-Annotation/blob/master/2.1_trains_SNAP_round2.sh)
+Subsequent steps are iterations of predicting models and training HMM. A total of 3 training iterations recommended (to prevent overfitting).
+##### 3.0. Round 2 of maker prediction
+Code: [3.0_annotation_prediction_2.sh](https://github.com/Wilber/Genome-Annotation/blob/master/3.0_annotation_prediction_2.sh)
 
 4. Run	MAKER	 ab	initio gene	prediction	(round	2)
 5. Iteratively	Running	MAKER	to	Improve	Annotation:	repeat	step 3	(retrain	the	prediction	software)	and	step 4 ( ab	initio prediction).
