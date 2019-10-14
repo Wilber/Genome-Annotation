@@ -1,11 +1,8 @@
-# Dillinger
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-# Genome	Annnotation
+# Genome	Annnotation: Gene prediction & functional annotation
 
 ## Genome	Annotation	Pipeline:	A summary	of	steps
+A beginner's guide [article](https://www.nature.com/articles/nrg3174)
 Summary	of	steps	involved	in	genome	annotation	using	MAKER
 pipeline:
 
