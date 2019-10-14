@@ -11,9 +11,13 @@ You will be annotating one Scaffold from the Almond genome assembly.
 ## Genome	Annotation	Pipeline:	A summary	of	steps
 The following is a summary	of	steps	involved	in	genome	annotation	using	MAKER pipeline. Note that prior identification of repeat elements is essential for genome sequence masking, before predicting genes. This step has already been run, and we will therefore not cover in class. However, interested parties can use [this](https://github.com/Wilber/Genome-Annotation/blob/master/repeat_identification.sh) script for repeat identification (uses RepeatMasker). 
 ##### 1.0 Initial	MAKER analysis (round 1  training):	
-Gene model prediction	based	on	evidence (expression	data,	protein sequence data,	repeat	annotation). Resulting GFF used to train [SNAP](https://github.com/KorfLab/SNAP) gene finder. [Code](https://github.com/Wilber/Genome-Annotation/blob/master/1_annotation_training.sh)
-###### 1.1. Train SNAP (round 1)
-Initial training of SNAP gene finder. This	generates an HMM file/classifier for the first round of evidence-based gene prediction in the next section.
+Gene model prediction	based	on	evidence (expression	data,	protein sequence data,	repeat	annotation). Resulting GFF used to train [SNAP](https://github.com/KorfLab/SNAP) gene finder.
+[1.0_annotation_training.sh](https://github.com/Wilber/Genome-Annotation/blob/master/1.0_annotation_training.sh)
+##### 1.1. Train SNAP (round 1)
+Initial training of SNAP gene finder. This	generates an HMM file/classifier for the first round of gene prediction using SNAP and AUGUSTUS gene finders, next section.
+[1.1_train_SNAP_round1.sh](https://github.com/Wilber/Genome-Annotation/blob/master/1.1_train_SNAP_round1.sh)
+##### 2.0 
+
 4. Run	MAKER	 ab	initio gene	prediction	(round	2)
 5. Iteratively	Running	MAKER	to	Improve	Annotation:	repeat	step 3	(retrain	the	prediction	software)	and	step 4 ( ab	initio prediction).
 A	couple	rounds	of	 ab	initio software	training	and	MAKER annotation	(	for	instance	3	rounds	total)	are	recommended.
