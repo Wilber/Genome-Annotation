@@ -3,7 +3,12 @@
 #PBS -N container.build
 #PBS -A PAS1582
 
+cd /fs/scratch/PAS1582/`whoami`
 
-cd /users/PAS0107/osu6702/project/annotation/annotation_class
+#these can be run without submitting job
 
+#Download (from docker hub) and build maker image
 singularity pull maker_version2.sif docker://wilberzach/maker:version2
+
+#Copy maker control/configuration files to present working dir
+cp ../HCS7194_Files/Genome_Annotation/maker_opts.training.ctl.* .
