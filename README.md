@@ -3,12 +3,11 @@
 
 
 ### Remarks
-A beginner's guide [article](https://www.nature.com/articles/nrg3174) on genome assembly and annotation.
-Download the MAKER container using [this](https://github.com/Wilber/Genome-Annotation/blob/master/makerContainerBuild.sh) script.
-Analysis will be carried out on the Ohio Supercomputer Center. Make sure to name your working directory contained in /fs/scratch/PAS1582/ with the same name as your OSC user name. For instance, if my OSC username is **osu123**, then have your working directory as **/fs/scratch/PAS1582/osu123**
-
-You will be annotating one Scaffold from the Almond genome assembly. 
-## Genome	Annotation	Pipeline:	A summary	of	steps
+* A beginner's guide on on genome assembly and annotation can be found [here](https://www.nature.com/articles/nrg3174). 
+* Download the MAKER container using [this](https://github.com/Wilber/Genome-Annotation/blob/master/makerContainerBuild.sh) script.
+* Analysis will be carried out on the Ohio Supercomputer Center. Make sure to name your working directory contained in /fs/scratch/PAS1582/ with the same name as your OSC user name. For instance, if my OSC username is **osu123**, then have your working directory as **/fs/scratch/PAS1582/osu123**
+* You will be annotating one Scaffold from the Almond genome assembly. 
+## MAKER :	A summary	of	steps
 The following is a summary	of	steps	involved	in	genome	annotation	using	MAKER pipeline. Note that prior identification of repeat elements is essential for genome sequence masking, before predicting genes. This step has already been run, and we will therefore not cover in class. However, interested parties can use [this](https://github.com/Wilber/Genome-Annotation/blob/master/repeat_identification.sh) script for repeat identification (uses RepeatMasker). 
 ##### 1.0 Initial	MAKER analysis (round 1  training):	
 Gene model prediction	based	on	evidence (expression	data,	protein sequence data,	repeat	annotation). Resulting GFF used to train [SNAP](https://github.com/KorfLab/SNAP) gene finder.
