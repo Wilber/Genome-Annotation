@@ -1,4 +1,4 @@
-#PBS -l walltime=02:00:00
+#PBS -l walltime=02:30:00
 #PBS -l nodes=1:ppn=25
 #PBS -N annotation_pred1
 #PBS -A PAS1582
