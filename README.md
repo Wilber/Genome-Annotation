@@ -36,7 +36,7 @@ Code: [5.1_uniprot.sh](https://github.com/Wilber/Genome-Annotation/blob/master/5
 ### 5.2. InterProScan
 Search Pfam database for protein domains in the predicted proteins;	and	update	the	MAKER	generated GFF3	file	with	the	InterProScan	results.	This	is	important	for identifying	predicted	gene	models	lacking	evidence	(AED=1)	but containing	Pfam protein	domains	in	their	protein	sequence. Pfam search also provides GO terms, hence additional functional annotation.
 Code: [5.2_interProScan.sh](https://github.com/Wilber/Genome-Annotation/blob/master/5.2_interProScan.sh)
-#### 6.0. Final gene models
+### 6.0. Final gene models
 Filter	gene	models	based	on	domain	content (pfam)	and	evidence support.	Visualize	models	on	a	genome	browser	such	as	[Jbrowse](http://jbrowse.org/).
 
 
