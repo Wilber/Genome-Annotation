@@ -2,8 +2,7 @@
 # Genome	Annnotation: Gene prediction & functional annotation
 
 ### Remarks
-* A beginner's guide on on genome assembly and annotation can be found [here](https://www.nature.com/articles/nrg3174). 
-* Download the MAKER container using [this](https://github.com/Wilber/Genome-Annotation/blob/master/makerContainerBuild.sh) script.
+ * Download the MAKER container using [this](https://github.com/Wilber/Genome-Annotation/blob/master/makerContainerBuild.sh) script.
 * Analysis will be carried out on the Ohio Supercomputer Center. Make sure to name your working directory contained in /fs/scratch/PAS1582/ with the same name as your OSC user name. For instance, if my OSC username is **osu123**, then have your working directory as **/fs/scratch/PAS1582/osu123**
 * You will be annotating one Scaffold from the Almond genome assembly. 
 ## MAKER :	A summary	of	steps
@@ -127,5 +126,6 @@ When	the	job	starts	running,	run:
 ```sh
 singularity	pull	maker_biocontainer.sif	docker://wilberzach/maker:biocontainerversion
 ```
-
-
+**Recommended reads**
+* A beginner's guide on on genome assembly and annotation can be found [here](https://www.nature.com/articles/nrg3174).
+* [What is a Hidden markov Model](https://www.nature.com/articles/nbt1004-1315)?
