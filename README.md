@@ -15,19 +15,20 @@ Code: [1.0_annotation_training.sh](https://github.com/Wilber/Genome-Annotation/b
 Initial training of SNAP gene finder. This	generates an HMM file/classifier for the first round of gene prediction using SNAP and AUGUSTUS gene finders, next section.
 Code: [1.1_train_SNAP_round1.sh](https://github.com/Wilber/Genome-Annotation/blob/master/1.1_train_SNAP_round1.sh)
 ### 2.0. Round 1 of maker prediction 
-First iteration of gene predictions employing a bootstrap approach. Predict gene models using SNAP and AUGUSTUS gene finders, using the HMM classifier generated in section 1.1 above. The reulting GFFs will be used for re-training the HMM classifier. 
+First iteration of gene predictions employing a bootstrap approach. Predict gene models using SNAP and AUGUSTUS gene finders, using the HMM classifier generated in section 1.1 above. The resulting GFFs will be used for re-training the HMM classifier. 
 Code: [2.0_annotation_prediction_1.sh](https://github.com/Wilber/Genome-Annotation/blob/master/2.0_annotation_prediction_1.sh)
 ### 2.1. Train SNAP (round 2)
-Round 2 of SNAP training. 
+Round 2 of SNAP training, using gene model predictions generated from the initial (round 1) maker prediction. 
+Subsequent steps in analysis are simply iterations of predicting models and training HMM. A total of 3 training iterations recommended (to prevent overfitting).
 Code: [2.1_trains_SNAP_round2.sh](https://github.com/Wilber/Genome-Annotation/blob/master/2.1_train_SNAP_round2.sh)
-Subsequent steps are iterations of predicting models and training HMM. A total of 3 training iterations recommended (to prevent overfitting).
 ### 3.0. Round 2 of maker prediction
+Predict gene models, using the HMM generated from round 2 of training.
 Code: [3.0_annotation_prediction_2.sh](https://github.com/Wilber/Genome-Annotation/blob/master/3.0_annotation_prediction_2.sh)
 ### 3.1. Train SNAP (round 3)
-Final iteration for training the HMM. 
+Final iteration for training the HMM, using gene models generated from round 2 maker predictions. 
 Code: [3.1_train_SNAP_round3.sh](https://github.com/Wilber/Genome-Annotation/blob/master/3.1_train_SNAP_round3.sh)
 ### 4.0. Round 3 of maker prediction
-Final round of MAKER gene model predictions.
+Final round of MAKER gene model predictions, using HMM from round 3 of SNAP training. 
 Code: [4.0_annotation_prediction_3.sh](https://github.com/Wilber/Genome-Annotation/blob/master/4.0_annotation_prediction_3.sh)
 ### 5.0. Functional	annotation:
 ### 5.1. Uniprot/SwissProt blastp
